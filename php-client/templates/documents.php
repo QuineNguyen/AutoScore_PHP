@@ -37,8 +37,8 @@ $documents = $documentManager->getDocuments(1, 100);
         }
         
         .header {
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            color: #333;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
             padding: 30px;
             text-align: center;
         }
@@ -49,26 +49,28 @@ $documents = $documentManager->getDocuments(1, 100);
         }
         
         .header p {
-            opacity: 0.8;
+            opacity: 0.95;
             font-size: 1.1em;
         }
         
         .nav {
             background: #f8f9fa;
-            padding: 15px 30px;
-            border-bottom: 1px solid #dee2e6;
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+            text-align: center;
         }
         
         .nav a {
-            color: #667eea;
+            color: #dc3545;
             text-decoration: none;
-            margin-right: 20px;
-            font-weight: 500;
+            margin: 0 20px;
+            font-weight: 600;
             transition: color 0.3s;
+            display: inline-block;
         }
         
         .nav a:hover {
-            color: #764ba2;
+            color: #c82333;
         }
         
         .content {
@@ -383,8 +385,7 @@ $documents = $documentManager->getDocuments(1, 100);
 <body>
     <div class="container">
         <div class="header">
-            <h1>Quản lý Tài liệu</h1>
-            <p>Upload và đồng bộ tài liệu tham khảo vào Vector Database</p>
+            <h1><img src="../assets/logo.png" alt="AutoScore Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;"> Quản lý Tài liệu</h1>
         </div>
         
         <div class="nav">

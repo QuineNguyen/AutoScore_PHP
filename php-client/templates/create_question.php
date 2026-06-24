@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         .header {
-            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -88,19 +88,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         .nav {
             background: #f8f9fa;
-            padding: 15px 30px;
-            border-bottom: 1px solid #dee2e6;
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+            text-align: center;
         }
         
         .nav a {
-            color: #667eea;
+            color: #dc3545;
             text-decoration: none;
-            margin-right: 20px;
-            font-weight: 500;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+            display: inline-block;
         }
         
         .nav a:hover {
-            color: #764ba2;
+            color: #c82333;
         }
         
         .content {
@@ -224,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .btn {
             display: inline-block;
             padding: 14px 35px;
-            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
             border: none;
             border-radius: 8px;
@@ -236,7 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
         }
         
         .info-box {
@@ -287,8 +290,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <div class="header">
-            <h1>Tạo câu hỏi tự luận</h1>
-            <p>Tạo câu hỏi mới để hệ thống AI chấm điểm tự động</p>
+            <h1><img src="../assets/logo.png" alt="AutoScore Logo" style="height: 40px; vertical-align: middle; margin-bottom: 10px;"> Tạo câu hỏi tự luận</h1>
         </div>
         
         <div class="nav">
@@ -377,8 +379,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <!-- RAG Info Section -->
                 <div class="rag-section active" id="ragSection">
                     <p style="color: #856404; margin: 0;">
-                        <strong>Chế độ RAG:</strong> Khi không có đáp án mẫu, hệ thống sẽ sử dụng chiến lược <strong>RAG Verification</strong> - 
-                        tra cứu trong tài liệu tham khảo đã sync vào Vector Database để đánh giá câu trả lời của học sinh.
+                        <strong>Chế độ RAG:</strong> Khi không có đáp án mẫu, hệ thống sẽ sử dụng cách <strong>RAG Verification</strong> - 
+                        tra cứu trong tài liệu tham khảo đã sync vào vector database để đánh giá câu trả lời của học sinh.
                     </p>
                 </div>
                 

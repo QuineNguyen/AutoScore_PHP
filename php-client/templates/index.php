@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -116,38 +116,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
             padding: 30px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
         
         .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
         
         .header p {
-            opacity: 0.9;
+            opacity: 0.95;
             font-size: 1.1em;
         }
         
         .nav {
             background: #f8f9fa;
-            padding: 15px 30px;
-            border-bottom: 1px solid #dee2e6;
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+            text-align: center;
         }
         
         .nav a {
-            color: #667eea;
+            color: #dc3545;
             text-decoration: none;
-            margin-right: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 5px;
+            display: inline-block;
         }
         
         .nav a:hover {
-            color: #764ba2;
+            color: #c82333;
+            border-bottom: 2px solid #dc3545;
         }
         
         .content {
@@ -211,8 +220,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
+            text-decoration: none;
             border: none;
             border-radius: 8px;
             font-size: 16px;
@@ -223,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
         }
         
         .btn:active {
@@ -317,21 +327,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         .btn-documents {
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            color: #333;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
         }
         
         .btn-documents:hover {
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
         }
         
         .btn-questions {
-            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
         }
         
         .btn-questions:hover {
-            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
         }
         
         /* Image Preview Styles */
@@ -457,8 +467,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
         <div class="header">
-            <h1>AutoScore</h1>
-            <p>Hệ thống Chấm điểm Tự động với AI</p>
+            <h1><img src="../assets/logo.png" alt="AutoScore Logo" style="height: 40px; vertical-align: middle; margin-bottom: 10px;"> AutoScore</h1>
         </div>
         
         <div class="nav">
@@ -473,7 +482,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="action-cards">
                 <div class="action-card documents-card">
                     <h3>Upload & Sync Tài liệu</h3>
-                    <p>Upload tài liệu tham khảo (PDF, TXT) và đồng bộ vào Vector Database để AI sử dụng khi chấm điểm</p>
+                    <p>Upload tài liệu tham khảo (PDF, TXT) và đồng bộ vào vector database để AI sử dụng khi chấm điểm</p>
                     <a href="documents.php" class="btn btn-documents">
                         Quản lý tài liệu
                     </a>
@@ -481,7 +490,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div class="action-card questions-card">
                     <h3>Tạo câu hỏi</h3>
-                    <p>Tạo câu hỏi mới với đáp án mẫu, cấu hình chiến lược chấm điểm và thang điểm</p>
+                    <p>Tạo câu hỏi mới với đáp án mẫu, cấu hình cách chấm điểm và thang điểm</p>
                     <a href="create_question.php" class="btn btn-questions">
                         Tạo câu hỏi mới
                     </a>
@@ -566,10 +575,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Xóa tất cả ảnh
                     </button>
                     
-                    <small style="display: block; margin-top: 10px;">Hệ thống sẽ tự động nhận diện text từ tất cả ảnh bằng OCR.</small>
+                    <small style="display: block; margin-top: 10px; text-align: center;">Hệ thống sẽ tự động nhận diện text từ tất cả ảnh bằng OCR.</small>
                 </div>
                 
-                <button type="submit" class="btn">Gửi chấm điểm</button>
+                <button type="submit" class="btn" style="display: block; margin: 0 auto;">Gửi chấm điểm</button>
             </form>
         </div>
         

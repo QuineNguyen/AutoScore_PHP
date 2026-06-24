@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['regrade']) && $submis
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['regrade']) && $submis
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -77,20 +77,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['regrade']) && $submis
         
         .nav {
             background: #f8f9fa;
-            padding: 15px 30px;
-            border-bottom: 1px solid #dee2e6;
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+            text-align: center;
         }
         
         .nav a {
-            color: #667eea;
+            color: #dc3545;
             text-decoration: none;
-            margin-right: 20px;
-            font-weight: 500;
+            margin: 0 20px;
+            font-weight: 600;
             transition: color 0.3s;
+            display: inline-block;
         }
         
         .nav a:hover {
-            color: #764ba2;
+            color: #c82333;
         }
         
         .content {
@@ -243,7 +245,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['regrade']) && $submis
 <body>
     <div class="container">
         <div class="header">
-            <h1>Kết quả chấm điểm</h1>
+            <h1><img src="../assets/logo.png" alt="AutoScore Logo" style="height: 40px; vertical-align: middle; margin-bottom: 10px;"> Kết quả chấm điểm</h1>
             <p>Submission #<?= $submissionId ?></p>
         </div>
         

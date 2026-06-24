@@ -33,7 +33,7 @@ $totalPages = ceil($totalRecords / $limit);
         
         body { 
             font-family: Arial, sans-serif; 
-            margin: 20px;
+            margin: 0;
             background-color: #f5f5f5;
         }
         
@@ -41,9 +41,69 @@ $totalPages = ceil($totalRecords / $limit);
             max-width: 1400px;
             margin: 0 auto;
             background: white;
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 2px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .nav a {
+            color: #dc3545;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            display: inline-block;
+            padding: 8px 0;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav a:hover {
+            color: #c82333;
+            border-bottom: 2px solid #dc3545;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #dee2e6;
+            margin-top: 30px;
         }
         
         h1 {
@@ -66,7 +126,7 @@ $totalPages = ceil($totalRecords / $limit);
         }
         
         th { 
-            background-color: #4CAF50;
+            background-color: #dc3545;
             color: white;
             font-weight: bold;
             text-align: center;
@@ -81,7 +141,7 @@ $totalPages = ceil($totalRecords / $limit);
         }
         
         .view-btn {
-            background-color: #2196F3;
+            background-color: #dc3545;
             color: white;
             padding: 6px 12px;
             text-decoration: none;
@@ -91,7 +151,7 @@ $totalPages = ceil($totalRecords / $limit);
         }
         
         .view-btn:hover {
-            background-color: #1976D2;
+            background-color: #c82333;
         }
         
         .score-cell {
@@ -157,8 +217,17 @@ $totalPages = ceil($totalRecords / $limit);
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Lịch sử chấm điểm</h1>
+    <div class="container" style="background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 30px; text-align: center;">
+            <h1 style="margin: 0; font-size: 2em; color: white;"><img src="../assets/logo.png" alt="AutoScore Logo" style="height: 40px; vertical-align: middle; margin-bottom: 10px;"> Lịch sử chấm điểm</h1>
+        </div>
+        <div style="background: #f8f9fa; padding: 20px 30px; border-bottom: 2px solid #dee2e6; text-align: center;">
+            <a href="index.php" style="color: #dc3545; text-decoration: none; margin: 0 20px; font-weight: 600; display: inline-block;">Chấm điểm mới</a>
+            <a href="create_question.php" style="color: #dc3545; text-decoration: none; margin: 0 20px; font-weight: 600; display: inline-block;">Tạo câu hỏi</a>
+            <a href="history.php" style="color: #dc3545; text-decoration: none; margin: 0 20px; font-weight: 600; display: inline-block;">Lịch sử</a>
+            <a href="documents.php" style="color: #dc3545; text-decoration: none; margin: 0 20px; font-weight: 600; display: inline-block;">Tài liệu</a>
+        </div>
+        <div style="padding: 30px;">
         
         <?php if (empty($submissions)): ?>
             <div class="no-data">
@@ -234,8 +303,9 @@ $totalPages = ceil($totalRecords / $limit);
             <?php endif; ?>
         <?php endif; ?>
         
-        <div class="back-link">
-            <a href="index.php">← Quay lại trang chủ</a>
+        </div>
+        <div style="background: #f8f9fa; padding: 20px; text-align: center; color: #666; border-top: 1px solid #dee2e6;">
+            <p>&copy; 2025 AutoScore System | Powered by AI</p>
         </div>
     </div>
 </body>
