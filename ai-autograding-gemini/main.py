@@ -6,7 +6,7 @@ import re
 import json
 import logging
 
-GEMINI_API_KEY = "AIzaSyB6pv-xINAvxXhCpu2pfKIg16EAJ8Z2AmA"
+GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"
 
 genai.configure(api_key=GEMINI_API_KEY)
 

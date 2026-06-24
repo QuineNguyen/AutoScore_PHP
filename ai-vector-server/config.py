@@ -4,7 +4,7 @@ import os
 DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 
-os.environ["GEMINI_API_KEY"] = "AIzaSyB6pv-xINAvxXhCpu2pfKIg16EAJ8Z2AmA"
+os.environ["GEMINI_API_KEY"] = "YOUR_GEMINI_API_KEY_HERE"
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 100
